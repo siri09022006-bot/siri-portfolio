@@ -467,12 +467,18 @@ export const TurntableHero: React.FC<TurntableHeroProps> = () => {
 
         {/* Right Stats Block - 100% Verified from Resume */}
         <div className="stats">
-          <b>8.7</b>
-          <span>CGPA · BNMIT CSE</span>
-          <b>9</b>
-          <span>GOOGLE CERTIFICATIONS</span>
-          <b>2</b>
-          <span>FLAGSHIP CASE STUDIES</span>
+          <div className="stat-item">
+            <b>8.7</b>
+            <span>CGPA · BNMIT CSE</span>
+          </div>
+          <div className="stat-item">
+            <b>9</b>
+            <span>GOOGLE CERTIFICATIONS</span>
+          </div>
+          <div className="stat-item">
+            <b>2</b>
+            <span>FLAGSHIP CASE STUDIES</span>
+          </div>
         </div>
       </main>
     </div>
