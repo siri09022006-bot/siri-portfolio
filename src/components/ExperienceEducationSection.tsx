@@ -101,16 +101,9 @@ export const ExperienceEducationSection: React.FC = () => {
     <section id="experience" className="content-section">
       <div className="section-container">
         {/* Experience Header */}
-        <div className="section-kicker">
-          <span>03 / EXPERIENCE</span>
-          <span className="dot-sep">•</span>
-          <span>LEARNING IN THE MAKING</span>
-        </div>
-
         <div className="section-intro-row">
           <h2 className="editorial-title">
-            Learning, <br />
-            <span className="shimmer-text">in the making.</span>
+            Learning, in the making.
           </h2>
           <p className="section-intro-desc">
             Hands-on design leadership across college tech societies, official TEDx events, and digital consumer brands.
@@ -168,15 +161,8 @@ export const ExperienceEducationSection: React.FC = () => {
 
         {/* Education Sub-Section */}
         <div id="education" className="education-block">
-          <div className="section-kicker" style={{ marginTop: '56px' }}>
-            <span>04 / EDUCATION</span>
-            <span className="dot-sep">•</span>
-            <span>THE FOUNDATION</span>
-          </div>
-
           <h3 className="sub-editorial-title">
-            The foundation, <br />
-            <span className="shimmer-text">engineering &amp; craft.</span>
+            The foundation, engineering &amp; craft.
           </h3>
 
           <div className="education-grid">

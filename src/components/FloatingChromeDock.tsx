@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Home, User, Briefcase, GraduationCap, Palette, Mail, Sparkles, Download } from 'lucide-react';
+import { Home, User, Briefcase, GraduationCap, Palette, Mail, Sparkles, Download, DoorClosed } from 'lucide-react';
 
-export const FloatingChromeDock: React.FC = () => {
+interface FloatingChromeDockProps {
+  onOpenDoor?: () => void;
+}
+
+export const FloatingChromeDock: React.FC<FloatingChromeDockProps> = ({ onOpenDoor }) => {
   const [activeSection, setActiveSection] = useState('home');
 
   const navItems = [
@@ -63,6 +67,18 @@ export const FloatingChromeDock: React.FC = () => {
             </button>
           );
         })}
+
+        {onOpenDoor && (
+          <button
+            type="button"
+            onClick={onOpenDoor}
+            className="dock-pill-btn dock-door-btn"
+            title="Open Anywhere Door"
+          >
+            <span className="dock-icon"><DoorClosed size={14} /></span>
+            <span className="dock-label">Door</span>
+          </button>
+        )}
 
         <a
           href="/Siri_DS_Resume.pdf"

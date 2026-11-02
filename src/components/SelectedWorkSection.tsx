@@ -113,16 +113,9 @@ export const SelectedWorkSection: React.FC = () => {
     <section id="work" className="content-section">
       <div className="section-container">
         {/* Section Header */}
-        <div className="section-kicker">
-          <span>02 / SELECTED WORKS</span>
-          <span className="dot-sep">•</span>
-          <span>FROM LEARNING TO EXPLORING</span>
-        </div>
-
         <div className="section-intro-row">
           <h2 className="editorial-title">
-            Case Studies, <br />
-            <span className="shimmer-text">crafted with depth.</span>
+            Case Studies, crafted with depth.
           </h2>
           <p className="section-intro-desc">
             Explore detailed UI/UX design systems spanning gamified mathematics learning and emotion-based music discovery.
@@ -142,7 +135,6 @@ export const SelectedWorkSection: React.FC = () => {
                 onClick={() => setActiveProject(item.id)}
                 className={`project-tab-btn ${isActive ? 'active' : ''}`}
               >
-                <span className="tab-number">{item.number}</span>
                 <span className="tab-title">{item.title}</span>
                 {isActive && <span className="tab-active-indicator" />}
               </button>
@@ -181,6 +173,18 @@ export const SelectedWorkSection: React.FC = () => {
             <h4 className="case-study-headline">{project.headline}</h4>
             <p className="case-study-overview">{project.overview}</p>
           </div>
+
+          {/* Real Project UI Screenshot */}
+          {project.id === 'kpopify' && (
+            <div className="case-study-media-stage">
+              <img
+                src="/kpopify_showcase.png"
+                alt="Kpopify mobile UI screens showcase"
+                className="case-study-screenshot"
+                loading="lazy"
+              />
+            </div>
+          )}
 
           {/* 3 Metrics / Info Columns */}
           <div className="case-study-info-grid">

@@ -52,16 +52,9 @@ export const SkillsCertificationsSection: React.FC = () => {
     <section id="skills" className="content-section">
       <div className="section-container">
         {/* Section Header */}
-        <div className="section-kicker">
-          <span>05 / SKILLS &amp; METHODOLOGY</span>
-          <span className="dot-sep">•</span>
-          <span>A GROWING VOCABULARY</span>
-        </div>
-
         <div className="section-intro-row">
           <h2 className="editorial-title">
-            Skills &amp; Craft, <br />
-            <span className="shimmer-text">curated with intent.</span>
+            Skills &amp; Craft, curated with intent.
           </h2>
           <p className="section-intro-desc">
             From UX field research to high-fidelity Figma components and computer science engineering foundations.
@@ -112,16 +105,9 @@ export const SkillsCertificationsSection: React.FC = () => {
 
         {/* Google Certifications Block */}
         <div id="certifications" className="certifications-block">
-          <div className="section-kicker" style={{ marginTop: '64px' }}>
-            <span>06 / CERTIFICATIONS</span>
-            <span className="dot-sep">•</span>
-            <span>ALWAYS A STUDENT</span>
-          </div>
-
           <div className="certs-headline-box">
             <h3 className="sub-editorial-title">
-              Google Certified, <br />
-              <span className="shimmer-text">from research to release.</span>
+              Google Certified, from research to release.
             </h3>
             <div className="cert-verified-pill">
               <ShieldCheck size={16} />

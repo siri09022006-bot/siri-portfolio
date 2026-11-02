@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles, ArrowRight, DoorClosed } from 'lucide-react';
 
 interface AnywhereDoorIntroProps {
   onEnter: () => void;
@@ -11,14 +11,14 @@ export const AnywhereDoorIntro: React.FC<AnywhereDoorIntroProps> = ({ onEnter, i
   const [handleTurned, setHandleTurned] = useState(false);
   const [dissolved, setDissolved] = useState(isOpenState);
 
-  // Synthesize a tactile brass door latch turn and warm welcoming harmonic chord
+  // Tactile brass latch click and welcoming harmonic sound via Web Audio API
   const playDoorSound = () => {
     try {
       const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       if (!AudioCtx) return;
       const ctx = new AudioCtx();
 
-      // 1. Solid brass latch click / turn
+      // Tactile latch click
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.type = 'triangle';
@@ -31,8 +31,8 @@ export const AnywhereDoorIntro: React.FC<AnywhereDoorIntroProps> = ({ onEnter, i
       osc.start();
       osc.stop(ctx.currentTime + 0.12);
 
-      // 2. Warm welcoming chime chord
-      const freqs = [392.00, 493.88, 587.33, 783.99]; // G, B, D, High G (Warm major)
+      // Warm major chime chord
+      const freqs = [392.00, 493.88, 587.33, 783.99]; // G, B, D, High G
       freqs.forEach((freq, idx) => {
         const chimeOsc = ctx.createOscillator();
         const chimeGain = ctx.createGain();
@@ -47,7 +47,7 @@ export const AnywhereDoorIntro: React.FC<AnywhereDoorIntroProps> = ({ onEnter, i
         chimeOsc.stop(ctx.currentTime + 0.9 + idx * 0.07);
       });
     } catch {
-      // Audio playback fails silently if user has not interacted
+      // Audio playback fails silently if browser policy restricts
     }
   };
 
@@ -58,12 +58,12 @@ export const AnywhereDoorIntro: React.FC<AnywhereDoorIntroProps> = ({ onEnter, i
 
     setTimeout(() => {
       setDoorOpen(true);
-    }, 280);
+    }, 250);
 
     setTimeout(() => {
       setDissolved(true);
       onEnter();
-    }, 1200);
+    }, 1100);
   };
 
   useEffect(() => {
@@ -77,20 +77,16 @@ export const AnywhereDoorIntro: React.FC<AnywhereDoorIntroProps> = ({ onEnter, i
 
   return (
     <div className={`anywhere-door-overlay ${doorOpen ? 'is-opening' : ''}`}>
-      {/* Ambient background particles */}
+      {/* Ambient luxury background */}
       <div className="door-space-bg">
         <div className="door-radial-glow" />
-        <div className="chrome-star star-1">✦</div>
-        <div className="chrome-star star-2">✦</div>
-        <div className="chrome-star star-3">✦</div>
-        <div className="chrome-star star-4">✦</div>
       </div>
 
-      {/* Top Header Prompt */}
+      {/* Primary Title - Painted on First Frame */}
       <div className="door-top-bar">
         <div className="door-brand-tag">
-          <b>Siri DS</b>
-          <span>• UI/UX Designer</span>
+          <span className="brand-name">Siri DS</span>
+          <span className="brand-role">UI/UX Design Intern</span>
         </div>
         <button
           type="button"
@@ -100,14 +96,22 @@ export const AnywhereDoorIntro: React.FC<AnywhereDoorIntroProps> = ({ onEnter, i
             onEnter();
           }}
           className="door-skip-btn"
+          aria-label="Enter portfolio immediately"
         >
           <span>Enter Portfolio</span>
           <ArrowRight size={14} />
         </button>
       </div>
 
-      {/* The Warm Classic Brown Home Door Stage */}
+      {/* Center 3D Anywhere Door Stage */}
       <div className="door-stage-3d">
+        <div className="door-header-copy">
+          <h1 className="door-h1-title">Siri DS — UI/UX Design Intern</h1>
+          <p className="door-h1-sub">
+            Computer Science &amp; Engineering student at BNMIT crafting thoughtful digital interfaces.
+          </p>
+        </div>
+
         <div
           className={`door-frame-wrapper ${handleTurned ? 'handle-clicked' : ''}`}
           onClick={handleOpenDoor}
@@ -116,43 +120,43 @@ export const AnywhereDoorIntro: React.FC<AnywhereDoorIntroProps> = ({ onEnter, i
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') handleOpenDoor();
           }}
-          aria-label="Open the door to enter Siri's portfolio"
+          aria-label="Open the Anywhere Door to enter Siri's 3D cartoon world"
         >
-          {/* Light Portal Emanating from Behind the Door */}
+          {/* Light Portal Emanating Behind the Door */}
           <div className={`door-portal-light ${doorOpen ? 'active' : ''}`} />
 
-          {/* The Brown Wooden Home Door */}
+          {/* 3D Door Leaf */}
           <div className={`door-leaf-3d ${doorOpen ? 'door-swung-open' : ''}`}>
             <img
               src="/brown_home_door.jpg"
-              alt="Classic Brown Wooden Home Door"
+              alt="Classic Anywhere Door in 3D perspective"
               className="door-render-img"
             />
-            {/* Subtle Wood Sheen Reflection */}
             <div className="door-gloss-reflection" />
-            {/* Tactile Brass Knob Highlight Hotspot */}
             <div className={`door-knob-highlight ${handleTurned ? 'turned' : ''}`} />
           </div>
 
-          {/* Ambient Floor Shadow */}
           <div className="door-floor-shadow" />
         </div>
 
-        {/* Floating Call to Action */}
+        {/* Tactile Call to Action */}
         <div className="door-cta-container">
           <button
             type="button"
             onClick={handleOpenDoor}
             className="door-open-pill-btn"
           >
-            <Sparkles size={16} className="btn-sparkle" />
-            <span>Turn Brass Knob to Enter</span>
+            <DoorClosed size={16} />
+            <span>Click Door to Open</span>
+            <Sparkles size={14} />
           </button>
           <p className="door-caption">
-            Welcome to Siri’s design space
+            Inspired by Gianluca Patti · 3D Cartoon World
           </p>
         </div>
       </div>
     </div>
   );
 };
+
+export default AnywhereDoorIntro;

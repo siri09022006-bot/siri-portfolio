@@ -15,41 +15,31 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="contact" className="content-section contact-section">
       <div className="section-container">
-        {/* Section Kicker */}
-        <div className="section-kicker">
-          <span>08 / CONTACT</span>
-          <span className="dot-sep">•</span>
-          <span>A NEW CONVERSATION</span>
-          <span className="dot-sep">•</span>
-          <span>BENGALURU, KARNATAKA</span>
-        </div>
-
         {/* Big Editorial Headline */}
         <div className="contact-headline-row">
           <h2 className="editorial-title contact-huge-title">
-            Good things start <br />
-            <span className="shimmer-text">with a conversation.</span>
+            Good things start with a conversation.
           </h2>
         </div>
 
         {/* Seeking Status Banner */}
         <div className="seeking-banner">
           <div className="seeking-left">
-            <span className="seeking-tag">CURRENTLY SEEKING</span>
+            <span className="seeking-tag">Currently Seeking</span>
             <h3 className="seeking-role">UI/UX Design Intern opportunities</h3>
           </div>
           <div className="seeking-right">
             <p>
-              I’m Siri, a third-year Computer Science &amp; Engineering student at BNMIT exploring UI/UX and
+              I’m Siri, a Computer Science &amp; Engineering student at BNMIT exploring UI/UX and
               interaction design. If there’s a thoughtful interface to shape, a visual brand to explore, or an
               internship team where I can learn and contribute, I’d love to connect.
             </p>
           </div>
         </div>
 
-        {/* 01 / Write to Me - Big Email Block */}
+        {/* Write to Me - Big Email Block */}
         <div className="contact-card email-hero-card">
-          <div className="card-kicker">01 / WRITE TO ME</div>
+          <div className="card-subhead">Write to Me</div>
           <div className="email-action-row">
             <a
               href={`mailto:${email}`}
@@ -83,11 +73,10 @@ export const ContactSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 02 & 03 Columns: Socials & Direct Details */}
+        {/* Columns: Socials & Direct Details */}
         <div className="contact-details-grid">
-          {/* 02 / Find Me Elsewhere */}
           <div className="contact-sub-card">
-            <div className="card-kicker">02 / FIND ME ELSEWHERE</div>
+            <div className="card-subhead">Find Me Elsewhere</div>
             <div className="social-links-list">
               <a
                 href="https://www.linkedin.com/in/siri-ds-1488a932b"
@@ -143,12 +132,12 @@ export const ContactSection: React.FC = () => {
 
           {/* 03 / The Details */}
           <div className="contact-sub-card">
-            <div className="card-kicker">03 / THE DETAILS</div>
+            <div className="card-subhead">Direct Details</div>
             <div className="details-box">
               <div className="detail-item">
                 <span className="detail-label">
                   <MapPin size={13} />
-                  BASED IN
+                  Based in
                 </span>
                 <span className="detail-val">Bengaluru, Karnataka, India</span>
               </div>

@@ -6,16 +6,16 @@ interface CartoonMarqueeProps {
 
 export const CartoonMarquee: React.FC<CartoonMarqueeProps> = () => {
   const words = [
-    'SIRI DS',
-    '3D CARTOON UNIVERSE',
-    'UI/UX DESIGN INTERN',
-    'BENGALURU, IN',
-    'FUELED BY BTS & COFFEE',
-    'DERIVA: QUEST FOR CALCULUS',
-    'KPOPIFY: MOOD SOUND',
-    'LEAD DESIGNER @ NEXUS BNMIT',
-    '9 GOOGLE CERTIFICATIONS',
-    '360° BTS CERAMIC ATELIER'
+    'Siri DS',
+    '3D Cartoon Universe',
+    'UI/UX Design Intern',
+    'Bengaluru, Karnataka',
+    'Fueled by BTS & Coffee',
+    'DERIVA: Gamified Calculus UX',
+    'Kpopify: Emotion Music Discovery',
+    'Lead Designer at NEXUS BNMIT',
+    '9 Google UX Certifications',
+    '360° Ceramic Figurine Atelier'
   ];
 
   return (
@@ -26,7 +26,7 @@ export const CartoonMarquee: React.FC<CartoonMarqueeProps> = () => {
             {words.map((w, idx) => (
               <span key={idx} className="marquee-item">
                 <span className="marquee-text">{w}</span>
-                <span className="marquee-sparkle">✦</span>
+                <span className="marquee-sparkle">•</span>
               </span>
             ))}
           </div>

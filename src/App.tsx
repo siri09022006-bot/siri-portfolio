@@ -19,6 +19,11 @@ export const App: React.FC = () => {
     setShowDoorScene(false);
   };
 
+  const handleReplayDoor = () => {
+    setIsDoorOpen(false);
+    setShowDoorScene(true);
+  };
+
   return (
     <div className="portfolio-app cartoon-world-theme">
       {/* 3D Chrome Anywhere Door Opening Portal */}
@@ -30,31 +35,31 @@ export const App: React.FC = () => {
       )}
 
       {/* Hero Section with Permanent Central 3D Cartoon Character */}
-      <TurntableHero />
+      <TurntableHero onReplayDoor={handleReplayDoor} />
 
       {/* Stylized Animated Cartoon Marquee Ribbon (Gianluca Patti Inspired) */}
       <CartoonMarquee />
 
-      {/* 01 / About Section — Becoming, by design. */}
+      {/* About Section — Becoming, by design. */}
       <AboutSection />
 
-      {/* 02 / Selected Works — DERIVA, Kpopify & Brand Systems */}
+      {/* Selected Works — DERIVA, Kpopify & Brand Systems */}
       <SelectedWorkSection />
 
-      {/* 03 & 04 / Experience & Education — NEXUS, TEDx, Sridattam & BNMIT */}
+      {/* Experience & Education — NEXUS, TEDx & BNMIT */}
       <ExperienceEducationSection />
 
-      {/* 05 & 06 / Skills & Google Certifications */}
+      {/* Skills & Google Certifications */}
       <SkillsCertificationsSection />
 
-      {/* 07 / Creative Atelier — 3D Figurine & BTS Mug Angle Explorer */}
+      {/* Creative Atelier — 3D Figurine & BTS Mug Angle Explorer */}
       <AtelierSection />
 
-      {/* 08 / Contact Section & Editorial Sign-off */}
+      {/* Contact Section & Editorial Sign-off */}
       <ContactSection />
 
       {/* Luxury Floating Dock Navigation */}
-      <FloatingChromeDock />
+      <FloatingChromeDock onOpenDoor={handleReplayDoor} />
     </div>
   );
 };

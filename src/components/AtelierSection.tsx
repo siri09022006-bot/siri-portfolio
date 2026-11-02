@@ -65,16 +65,9 @@ export const AtelierSection: React.FC = () => {
     <section id="atelier" className="content-section">
       <div className="section-container">
         {/* Section Header */}
-        <div className="section-kicker">
-          <span>07 / CREATIVE ATELIER</span>
-          <span className="dot-sep">•</span>
-          <span>WHERE THE IDEA GETS TO WANDER</span>
-        </div>
-
         <div className="section-intro-row">
           <h2 className="editorial-title">
-            The Creative Atelier, <br />
-            <span className="shimmer-text">where the idea gets to wander.</span>
+            The Creative Atelier
           </h2>
           <p className="section-intro-desc">
             A space for discovery where editorial styling and 3D craft meet. A figure in a vivid magenta saree standing on a 3D BTS ceramic mug.
@@ -149,11 +142,10 @@ export const AtelierSection: React.FC = () => {
         <div className="angles-explorer-box">
           <div className="angles-header">
             <div>
-              <span className="box-kicker">INTERACTIVE ANGLE INSPECTOR</span>
-              <h3 className="sub-editorial-title">One idea. Every angle.</h3>
+              <h3 className="sub-editorial-title">Every angle.</h3>
             </div>
             <p className="angles-header-desc">
-              Click any view below to inspect camera angles, silk drape highlights, and surface typography.
+              Inspect camera perspectives, silk drape highlights, and surface typography.
             </p>
           </div>
 
@@ -178,15 +170,25 @@ export const AtelierSection: React.FC = () => {
               );
             })}
           </div>
+
+          {/* Real Full Atelier Angle Composition Image */}
+          <div className="atelier-composition-stage">
+            <img
+              src="/atelier_angles.png"
+              alt="Multi-angle 3D character and ceramic mug composition"
+              className="atelier-composition-img"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         {/* Visual Play Signoff */}
         <div className="atelier-signoff-card">
           <div className="signoff-quote">
             <Sparkles size={20} className="sparkle-icon" />
-            <h4>Visual play, with intention.</h4>
+            <h4 className="signoff-title">Visual play.</h4>
             <p>
-              This exploration in scale, form, and dimensional presentation informs the same attention to detail applied to interface design and digital brand identity.
+              This exploration in scale and form informs the attention to detail applied to interface design and digital brand identity.
             </p>
           </div>
           <a

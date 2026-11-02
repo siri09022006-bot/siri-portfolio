@@ -5,22 +5,14 @@ export const AboutSection: React.FC = () => {
   return (
     <section id="about" className="content-section">
       <div className="section-container">
-        {/* Editorial Subtitle */}
-        <div className="section-kicker">
-          <span>01 / ABOUT SIRI</span>
-          <span className="dot-sep">•</span>
-          <span>BENGALURU, KARNATAKA</span>
-        </div>
-
-        {/* Hero Title */}
+        {/* Header Grid */}
         <div className="about-header-grid">
           <div>
             <h2 className="editorial-title">
-              Becoming, <br />
-              <span className="shimmer-text">by design.</span>
+              Becoming, by design.
             </h2>
             <div className="siri-monogram">
-              SIRI DS
+              Siri DS
               <span className="monogram-tag">UI/UX Design Intern</span>
             </div>
           </div>

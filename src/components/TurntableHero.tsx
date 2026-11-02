@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Coffee, Download } from 'lucide-react';
+import { Coffee, Download, DoorClosed } from 'lucide-react';
 
 interface TurntableHeroProps {
   onReplayDoor?: () => void;
@@ -12,7 +12,7 @@ interface Particle {
   text: string;
 }
 
-export const TurntableHero: React.FC<TurntableHeroProps> = () => {
+export const TurntableHero: React.FC<TurntableHeroProps> = ({ onReplayDoor }) => {
   const cvRef = useRef<HTMLCanvasElement>(null);
   const figRef = useRef<HTMLDivElement>(null);
   const [headTilt, setHeadTilt] = useState(0);
@@ -374,6 +374,17 @@ export const TurntableHero: React.FC<TurntableHeroProps> = () => {
           <a href="#experience" className="nav-link">Experience</a>
           <a href="#skills" className="nav-link">Skills</a>
           <a href="#atelier" className="nav-link">Atelier</a>
+          {onReplayDoor && (
+            <button
+              type="button"
+              onClick={onReplayDoor}
+              className="door-nav-pill-btn"
+              title="Open Anywhere Door"
+            >
+              <DoorClosed size={14} />
+              <span>Anywhere Door</span>
+            </button>
+          )}
           <a
             href="/Siri_DS_Resume.pdf"
             download="Siri_DS_Resume.pdf"
@@ -393,24 +404,14 @@ export const TurntableHero: React.FC<TurntableHeroProps> = () => {
 
       {/* Main 3D Cartoon Hero Stage */}
       <main className="stage">
-        {/* Soft Volumetric Lighting & Background Typo */}
+        {/* Soft Volumetric Stage Lighting */}
         <div className="glow"></div>
-        <div className="word" aria-hidden="true">
-          DESIGN
-        </div>
         <div className="floor"></div>
-
-        {/* Floating Ambient Chrome Sparks */}
-        <div className="ambient-sparkles">
-          <span className="sparkle-1">✦</span>
-          <span className="sparkle-2">✦</span>
-          <span className="sparkle-3">✦</span>
-        </div>
 
         {/* Left Headline */}
         <div className="intro">
           <h1>
-            I design products people <em>enjoy</em> using.
+            I design products people enjoy using.
           </h1>
           <p>Computer Science &amp; Engineering student at BNMIT seeking a UI/UX Design Intern role.</p>
         </div>
@@ -473,11 +474,11 @@ export const TurntableHero: React.FC<TurntableHeroProps> = () => {
           </div>
           <div className="stat-item">
             <b>9</b>
-            <span>GOOGLE CERTIFICATIONS</span>
+            <span>Google Certifications</span>
           </div>
           <div className="stat-item">
             <b>2</b>
-            <span>FLAGSHIP CASE STUDIES</span>
+            <span>Flagship Case Studies</span>
           </div>
         </div>
       </main>
